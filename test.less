@@ -1,0 +1,14 @@
+﻿ @mainColour: #285592;
+ @secondColour : spin(@mainColour, 180); //HW: spin the colour wheel 180 deg
+
+@triSecond : spin(@mainColour, -(360 / 3)); //HW: if it need 2 extra colour base on the main colour, it will pick the colour next to the main one from the wheel.
+@triThrid  : spin(@mainColour, (360 / 3));
+
+
+
+.test (@mainColour) when (lightness(@mainColour) >= 94%) {   
+    @mainColour: darken(@mainColour, 15%);
+     @mainColour: red;
+ @secondColour : spin(@mainColour, 180);
+   background:  @secondColour;
+} //HW: finish it off with a less guard, so if main colour is white, change main colour to red which lead to changing second colour value
